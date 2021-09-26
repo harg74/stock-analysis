@@ -18,7 +18,7 @@ Regarding year 2018, we can see that it was a bad year for the Green market in g
 
 We were able to obtain this kind of results mainly for the below chunk of code. Where we are using arrays to "capture" the values that we need and store them on these arrays.
 
-`   '1b) Create three output arrays
+    1b) Create three output arrays
     Dim tickerVolumes() As Long
     Dim tickerStartingPrices() As Single
     Dim tickerEndingPrice() As Single
@@ -31,7 +31,8 @@ For example, to obtain the ticker volumes, we utilized the dynamic tickerVolumes
 
 Inside this nested loop, there are 3 conditionals to determine the values of the tickerStartingPrices() and tickerEndingPrice() arrays. As noted in the images below, the tickerIndex varible is the one indexing inside of these for the four arrays: tickers(), tickerVolumes(), tickerStartingPrices() and tickerEndingPrice().
 
-`'2a) Create a for loop to initialize the tickerVolumes to zero.
+```
+'2a) Create a for loop to initialize the tickerVolumes to zero.
     For j = 0 To 11
     
         tickerVolumes(tickerIndex) = 0
@@ -67,7 +68,8 @@ Inside this nested loop, there are 3 conditionals to determine the values of the
         
         tickerIndex = tickerIndex + 1
         
-    Next j`
+    Next j
+```
 
 Below, are described the scored times for both codes:
 
