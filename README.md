@@ -31,7 +31,8 @@ For example, to obtain the ticker volumes, we utilized the dynamic tickerVolumes
 
 Inside this nested loop, there are 3 conditionals to determine the values of the tickerStartingPrices() and tickerEndingPrice() arrays. As noted in the images below, the tickerIndex varible is the one indexing inside of these for the four arrays: tickers(), tickerVolumes(), tickerStartingPrices() and tickerEndingPrice().
 
-`    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+`  
+''2a) Create a for loop to initialize the tickerVolumes to zero.
     
     For j = 0 To 11
     
@@ -68,7 +69,8 @@ Inside this nested loop, there are 3 conditionals to determine the values of the
         
         tickerIndex = tickerIndex + 1
         
-    Next j`
+    Next j
+    `
 
 Below, are described the scored times for both codes.
 
