@@ -97,7 +97,7 @@ Below, are listed the scored times for both codes:
 
 ## Summary
 
-Refactoring our code should help us to optimize it, once we have finished our first script, to make it easier to read and to make it run faster. Probably it would take you a couple of hours more to refactor it, depending on the circumstances, but at the end it should help you to save minutes, that later convert into hours, while running it in production.
+Refactoring our code should help us to optimize it once we have finished our first script, to make it easier to read and to make it run faster. Probably it would take you a couple of hours more to refactor it depending on the circumstances, but at the end it should help you to save minutes, that later convert into hours, while running it in production.
 
-As described above, it took around ≈ 88 seconds more for the refactored code to provide the same results as the previous code. It was certainly more readable, but in terms of speed of execution, at least in this try, it wasn't faster.
+As described above, it took around ≈ 88 seconds more for the refactored code to provide the same results as the non-refactored code. It was certainly more readable, but in terms of speed of execution, at least in this try, it wasn't faster.
     
