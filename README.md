@@ -71,7 +71,8 @@ Inside this nested loop, there are 3 conditionals to determine the values of the
     Next j
 ```
 
-Below, are described the scored times for both codes:
+
+Below, are listed the scored times for both codes:
 
 ### 1. Non-Refactored script:
     
