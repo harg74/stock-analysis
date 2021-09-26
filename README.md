@@ -72,28 +72,28 @@ Inside this nested loop, there are 3 conditionals to determine the values of the
     Next j
     `
 
-Below, are described the scored times for both codes.
+Below, are described the scored times for both codes:
 
 ### 1. Non-Refactored script:
     
    - **Analysis for 2017: 0.91 seconds**
     
-   ![2017](https://user-images.githubusercontent.com/78564912/134818531-2a267733-5a93-4d48-981f-e44f0abe204a.png)
+        ![2017](https://user-images.githubusercontent.com/78564912/134818531-2a267733-5a93-4d48-981f-e44f0abe204a.png)
         
    - **Analysis for 2018: 0.85 seconds**
-    
-   ![2018](https://user-images.githubusercontent.com/78564912/134818594-0031e939-214f-47bd-af13-99da8d355377.png)
+       
+       ![2018](https://user-images.githubusercontent.com/78564912/134818594-0031e939-214f-47bd-af13-99da8d355377.png)
 
 
 ### 2. Refactored script:
     
    - **Analysis for 2017: 88.32 seconds**
     
-   ![2017-refactor](https://user-images.githubusercontent.com/78564912/134818529-32e174d5-d37a-45b7-be63-960d1d6e166e.png)
+        ![2017-refactor](https://user-images.githubusercontent.com/78564912/134818529-32e174d5-d37a-45b7-be63-960d1d6e166e.png)
         
    - **Analysis for 2018: 88.58 seconds**
     
-   ![2018-refactor](https://user-images.githubusercontent.com/78564912/134818584-e32ba472-194b-4dd4-831e-58733738971b.png)
+        ![2018-refactor](https://user-images.githubusercontent.com/78564912/134818584-e32ba472-194b-4dd4-831e-58733738971b.png)
 
 ## Summary
 
