@@ -19,36 +19,32 @@ Regarding year 2018, we can see that it was a bad year for the Green market in g
 We were able to obtain this kind of results mainly for the below chunk of code. Where we are using arrays to "capture" the values that we need and store them on these arrays.
 
     1b) Create three output arrays
-    Dim tickerVolumes() As Long
-    Dim tickerStartingPrices() As Single
-    Dim tickerEndingPrice() As Single
-    
-    ReDim tickerVolumes(12)
-    ReDim tickerStartingPrices(12)
-    ReDim tickerEndingPrice(12)`
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrice(12) As Single
 
-For example, to obtain the ticker volumes, we utilized the dynamic tickerVolumes() array and a nested for loop that variable 'i' would loop for each row, looking for the volumes (either in 2017 or 2018 tabs) and 'j' would be looking for the ticker names, where tickerIndex variable would be increasing for each loop 'j' would do.
+For example, to obtain the ticker volumes, we utilized 1) the dynamic tickerVolumes() array, 2) a for loop with variable 'i' that would loop for each row, looking for the volumes (either in 2017 or 2018 tabs) and 3) another for loop with variable 'j', that  would be setting the tickerVolumes() to zero.
 
-Inside this nested loop, there are 3 conditionals to determine the values of the tickerStartingPrices() and tickerEndingPrice() arrays. As noted in the images below, the tickerIndex varible is the one indexing inside of these for the four arrays: tickers(), tickerVolumes(), tickerStartingPrices() and tickerEndingPrice().
+Inside the first loop there are 2 conditionals to determine the values of the tickerStartingPrices() and tickerEndingPrice() arrays. As noted in the images below, the tickerIndex varible is the one indexing inside of these for the four arrays: tickers(), tickerVolumes(), tickerStartingPrices() and tickerEndingPrice().
 
 ```
-'2a) Create a for loop to initialize the tickerVolumes to zero.
-    For j = 0 To 11
+
+    ''2a) Create a for loop to initialize the tickerVolumes to zero.
     
-        tickerVolumes(tickerIndex) = 0
+    For j = 0 To 11
+
+        tickerVolumes(j) = 0
+
+    Next j
     
     '2b) Loop over all the rows in the spreadsheet.
-        For i = 2 To RowCount
+     Worksheets(yearValue).Activate
+     For i = 2 To RowCount
         
             '3a) Increase volume for current ticker
             
-            Worksheets(yearValue).Activate
+           tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
             
-            If Cells(i, 1).Value = tickers(tickerIndex) Then
-                
-                tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8)
-                    
-            End If
                 
             '3b) Check if the current row is the first row with the selected tickerIndex.
             If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
@@ -61,14 +57,12 @@ Inside this nested loop, there are 3 conditionals to determine the values of the
             If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
             
                 tickerEndingPrice(tickerIndex) = Cells(i, 6).Value
+                
+                tickerIndex = tickerIndex + 1
             
             End If
         
         Next i
-        
-        tickerIndex = tickerIndex + 1
-        
-    Next j
 ```
 
 
@@ -87,17 +81,19 @@ Below, are listed the scored times for both codes:
 
 ### 2. Refactored script:
     
-   - Analysis for 2017: 88.32 seconds
+   - Analysis for 2017: 0.17 seconds
     
-        ![2017-refactor](https://user-images.githubusercontent.com/78564912/134818529-32e174d5-d37a-45b7-be63-960d1d6e166e.png)
+        ![2017 Refactored](https://user-images.githubusercontent.com/78564912/136880060-eee8957e-17ce-4a5c-833e-25307525432e.png)
+
         
-   - Analysis for 2018: 88.58 seconds
+   - Analysis for 2018: 0.17 seconds
     
-        ![2018-refactor](https://user-images.githubusercontent.com/78564912/134818584-e32ba472-194b-4dd4-831e-58733738971b.png)
+        ![2018 Refactored](https://user-images.githubusercontent.com/78564912/136880074-65f3cbe8-87a8-41a8-b152-f148a75279ec.png)
+
 
 ## Summary
 
 Refactoring our code should help us to optimize it once we have finished our first script, to make it easier to read and to make it run faster. Probably it would take you a couple of hours more to refactor it depending on the circumstances, but at the end it should help you to save minutes, that later convert into hours, while running it in production.
 
-As described above, it took around ≈ 88 seconds more for the refactored code to provide the same results as the non-refactored code. It was certainly more readable, but in terms of speed of execution, at least in this try, it wasn't faster.
+As described above, it took only around ≈ .17 seconds for the refactored code to provide the same results as the non-refactored code. Its benefits, it certainly more readable, and in terms of speed of execution, it is faster.
     
